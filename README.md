@@ -1,5 +1,4 @@
 # data-platform-plant-sql 
-
 data-platform-plant-sql は、データ連携基盤において、プラントデータを保存するSQLテーブルを作成するためのレポジトリです。   
 
 ## 前提条件  
@@ -11,8 +10,8 @@ https://api.XXXXXXXX.com/api/OP_API_XXXXXXX_XXX/overview
 data-platform-plant-sql には、sqlの設定ファイルとして、以下のファイルが含まれています。    
 
 * data-platform-plant-sql-general-data.sql（データ連携基盤 プラント - 一般データ）
-* data-platform-plant-sql-address-data.sql（データ連携基盤 プラント - 住所データ）
+* data_platform_plant_sql_storage_location_data.sql（データ連携基盤 プラント - 保管場所データ）
 
 ## MySQLのセットアップ / Kubernetesの設定 / SQLテーブルの作成方法
 
-MySQLのセットアップ / Kubernetesの設定 / 具体的なSQLテーブルの作成方法、については、[mysql-kube](https://github.com/latonaio/mysql-kube)を参照ください。  
+MySQLのセットアップ / Kubernetesの設定 / 具体的なSQLテーブルの作成方法、については、[mysql-kube](https://github.com/latonaio/mysql-kube)を参照ください。
