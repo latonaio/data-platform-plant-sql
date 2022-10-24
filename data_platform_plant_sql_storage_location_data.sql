@@ -1,6 +1,6 @@
 CREATE TABLE `data_platform_plant_storage_location_data`
 (
-  `BusinessPartner`                 varchar(10) NOT NULL,
+  `BusinessPartner`                 int(10) NOT NULL,
   `Plant`                           varchar(4) NOT NULL,
   `StorageLocation`                 varchar(4) NOT NULL,
   `StorageLocationFullName`         varchar(200) DEFAULT NULL,
@@ -17,7 +17,11 @@ CREATE TABLE `data_platform_plant_storage_location_data`
   `GroupStorageLocationName2`       varchar(40) DEFAULT NULL,
   `IsMarkedForArchiving`            tinyint(1) DEFAULT NULL,
   `StorageLocationIDByExtSystem`    varchar(20) DEFAULT NULL,
+  
     PRIMARY KEY (`BusinessPartner`, `Plant`, `StorageLocation`),
-    CONSTRAINT `DataPlatformPlantStorageLocationData_fk` FOREIGN KEY (`BusinessPartner`, `Plant`) REFERENCES `data_platform_plant_general_data` (`BusinessPartner`, `Plant`)
+    
+    CONSTRAINT `DataPlatformPlantStorageLocationData_fk` FOREIGN KEY (`BusinessPartner`, `Plant`) REFERENCES `data_platform_plant_general_data` (`BusinessPartner`, `Plant`),
+    CONSTRAINT `DataPlatformPlantStorageLocationDataLanguage_fk` FOREIGN KEY (`Language`) REFERENCES `data_platform_language_language_data` (`Language`)
+
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
