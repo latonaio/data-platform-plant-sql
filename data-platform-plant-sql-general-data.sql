@@ -6,17 +6,10 @@ CREATE TABLE `data_platform_plant_general_data`
   `PlantName`                       varchar(100) NOT NULL,
   `Language`                        varchar(2) NOT NULL,
   `CreationDate`                    date NOT NULL,
-  `CreationTime`                    time NOT NULL,
   `LastChangeDate`                  date NOT NULL,
-  `LastChangeTime`                  time NOT NULL,
   `PlantFoundationDate`             date DEFAULT NULL,
   `PlantLiquidationDate`            date DEFAULT NULL,
-  `SearchTerm1`                     varchar(40) DEFAULT NULL,
-  `SearchTerm2`                     varchar(40) DEFAULT NULL,
   `PlantDeathDate`                  date DEFAULT NULL,
-  `PlantIsBlocked`                  tinyint(1) DEFAULT NULL,
-  `GroupPlantName1`                 varchar(100) DEFAULT NULL,
-  `GroupPlantName2`                 varchar(100) DEFAULT NULL,
   `AddressID`                       int(12) DEFAULT NULL,
   `Country`                         varchar(3) DEFAULT NULL,
   `TimeZone`                        varchar(3) DEFAULT NULL,
@@ -27,8 +20,7 @@ CREATE TABLE `data_platform_plant_general_data`
     
   CONSTRAINT `DataPlatformPlantGeneralDataBusinessPartner_fk` FOREIGN KEY (`BusinessPartner`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
   CONSTRAINT `DataPlatformPlantGeneralDataLanguage_fk` FOREIGN KEY (`Language`) REFERENCES `data_platform_language_language_data` (`Language`),
-  CONSTRAINT `DataPlatformPlantGeneralDataDivision_fk` FOREIGN KEY (`Division`) REFERENCES `data_platform_division_division_data` (`Division`),
-  CONSTRAINT `DataPlatformPlantGeneralDataAddressID_fk` FOREIGN KEY (`AddressID`, `Country`, `TimeZone`) REFERENCES `data_platform_address_address_data` (`AddressID`, `Country`, `TimeZone`)
+  CONSTRAINT `DataPlatformPlantGeneralDataAddressID_fk` FOREIGN KEY (`AddressID`) REFERENCES `data_platform_address_address_data` (`AddressID`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
