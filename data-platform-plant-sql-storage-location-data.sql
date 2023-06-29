@@ -5,14 +5,14 @@ CREATE TABLE `data_platform_plant_storage_location_data`
   `StorageLocation`                 varchar(4) NOT NULL,
   `StorageLocationFullName`         varchar(200) DEFAULT NULL,
   `StorageLocationName`             varchar(100) NOT NULL,
+  `StorageLocationIDByExtSystem`    varchar(20) DEFAULT NULL,
   `CreationDate`                    date NOT NULL,
   `LastChangeDate`                  date NOT NULL,
-  `StorageLocationIDByExtSystem`    varchar(20) DEFAULT NULL,
   `IsMarkedForDeletion`             tinyint(1) DEFAULT NULL,
   
-    PRIMARY KEY (`BusinessPartner`, `Plant`, `StorageLocation`),
+  PRIMARY KEY (`BusinessPartner`, `Plant`, `StorageLocation`),
     
-    CONSTRAINT `DataPlatformPlantStorageLocationData_fk` FOREIGN KEY (`BusinessPartner`, `Plant`) REFERENCES `data_platform_plant_general_data` (`BusinessPartner`, `Plant`)
+  CONSTRAINT `DataPlatformPlantStorageLocationData_fk` FOREIGN KEY (`BusinessPartner`, `Plant`) REFERENCES `data_platform_plant_general_data` (`BusinessPartner`, `Plant`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
